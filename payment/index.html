@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Payment AstonServe</title>
+
+    <!-- CSS-5 -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.css"
@@ -48,7 +50,7 @@
       .input-group select {
         width: calc(100% - 30px); /* Mengurangi lebar input dengan lebar ikon */
         padding: 10px;
-        padding-left: 30px; /* Menyesuaikan padding kiri dengan lebar ikon */
+        padding-left: 30px;
         border-radius: 5px;
         border: 1px solid #ccc;
         transition: border-color 0.3s ease;
@@ -159,10 +161,12 @@
       upload bukti pembayaran
     </p>
 
+    <!-- JS-5 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
     <script>
       feather.replace();
 
+      // Javascript buat ngatur submit enable or disable
       function checkValue() {
         var selectValue = document.getElementById("daftarroom").value;
         var sendButton = document.getElementById("paymentbutton");
