@@ -1,10 +1,25 @@
+<?php
+session_start();
+
+if(!isset($_SESSION["login"])){
+    echo "<script>
+            alert('Silahkan login terlebih dahulu');
+            window.location.href = '../';
+    </script>";
+    exit;
+}
+
+require '../myfun.php';
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="Icon" href="img/astonservelogo.png" type="image/x-icon" />
+    <link rel="Icon" href="/img/astonservelogo.png" type="image/x-icon" />
 
     <!-- Bootstrap CSS -->
     <link
@@ -79,7 +94,7 @@
       style="background-color: #081c2b"
     >
       <div class="container-fluid">
-        <a class="navbar-brand" href="https://jhonvnbb.github.io/Aston-Serve/">AstonServe✤</a>
+        <a class="navbar-brand" href="../home/">AstonServe✤</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -94,10 +109,34 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="https://jhonvnbb.github.io/Aston-Serve/">Home</a>
+              <a class="nav-link active" aria-current="page" href="../home/"
+                >Home</a
+              >
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://jhonvnbb.github.io/Aston-Serve/profil/">Account</a>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Account
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li class="nav-item">
+                  <a class="dropdown-item" href="../profil/">My Account</a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="dropdown-item"
+                    style="color: red"
+                    href="../logout.php"
+                    ><i data-feather="log-out"></i> Log out</a
+                  >
+                </li>
+              </ul>
             </li>
             <li class="nav-item dropdown">
               <a
@@ -199,7 +238,7 @@
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img
-            src="/img/b1.jpg"
+            src="../img/b1.jpg"
             class="d-block w-100"
             alt="IMG-1"
             style="height: 500px"
@@ -211,7 +250,7 @@
         </div>
         <div class="carousel-item">
           <img
-            src="/img/b2.webp"
+            src="../img/b2.webp"
             class="d-block w-100"
             alt="IMG-2"
             style="height: 500px"
@@ -223,7 +262,7 @@
         </div>
         <div class="carousel-item">
           <img
-            src="/img/b3.jpg"
+            src="../img/b3.jpg"
             class="d-block w-100"
             alt="IMG-3"
             style="height: 500px"
@@ -235,7 +274,7 @@
         </div>
         <div class="carousel-item">
           <img
-            src="/img/b4.webp"
+            src="../img/b4.webp"
             class="d-block w-100"
             alt="IMG-4"
             style="height: 500px"
@@ -247,7 +286,7 @@
         </div>
         <div class="carousel-item">
           <img
-            src="/img/b5.jpg"
+            src="../img/b5.jpg"
             class="d-block w-100"
             alt="IMG-5"
             style="height: 500px"
@@ -261,7 +300,7 @@
         </div>
         <div class="carousel-item">
           <img
-            src="/img/b6.jpg"
+            src="../img/b6.jpg"
             class="d-block w-100"
             alt="IMG-6"
             style="height: 500px"
@@ -300,7 +339,7 @@
         style="display: flex; flex-direction: row; align-items: center"
       >
         <img
-          src="/img/astonservelogo.png"
+          src="../img/astonservelogo.png"
           alt="Room1"
           style="
             width: 250px;
@@ -337,7 +376,7 @@
             style="width: 500px; max-height: 100%; margin-left: 50px"
           >
             <img
-              src="/img/b1.jpg"
+              src="../img/b1.jpg"
               class="card-img-top"
               alt="Room1"
               style="width: 100%; height: 100%; object-fit: cover"
@@ -367,7 +406,7 @@
               </ul>
               <h6 class="mt-3">Harga</h6>
               <p class="card-text">2.000.000 IDR/malam</p>
-              <a href="https://jhonvnbb.github.io/Aston-Serve/payment/" class="btn btn-primary">Pesan Sekarang</a>
+              <a href="../payment/" class="btn btn-primary">Pesan Sekarang</a>
             </div>
           </div>
         </div>
@@ -387,7 +426,7 @@
             id="deluxerooms"
           >
             <img
-              src="/img/b2.webp"
+              src="../img/b2.webp"
               class="card-img-top"
               alt="Room2"
               style="width: 100%; height: 100%"
@@ -418,7 +457,7 @@
               </ul>
               <h6 class="mt-3">Harga</h6>
               <p>1.750.000 IDR/malam</p>
-              <a href="https://jhonvnbb.github.io/Aston-Serve/payment/" class="btn btn-primary">Pesan Sekarang</a>
+              <a href="../payment/" class="btn btn-primary">Pesan Sekarang</a>
             </div>
           </div>
         </div>
@@ -437,7 +476,7 @@
             style="max-width: 500px; max-height: 100%; margin-left: 50px"
           >
             <img
-              src="/img/b3.jpg"
+              src="../img/b3.jpg"
               class="card-img-top"
               alt="Room1"
               style="width: 100%; height: 280px; object-fit: cover"
@@ -468,7 +507,7 @@
               </ul>
               <h6 class="mt-3">Harga</h6>
               <p class="card-text">3.050.000 IDR/malam</p>
-              <a href="https://jhonvnbb.github.io/Aston-Serve/payment/" class="btn btn-primary">Pesan Sekarang</a>
+              <a href="../payment/" class="btn btn-primary">Pesan Sekarang</a>
             </div>
           </div>
         </div>
@@ -488,7 +527,7 @@
             id="singlerooms"
           >
             <img
-              src="/img/b4.webp"
+              src="../img/b4.webp"
               class="card-img-top"
               alt="Room2"
               style="width: 100%; height: 100%"
@@ -519,7 +558,7 @@
               </ul>
               <h6 class="mt-3">Harga</h6>
               <p>1.000.000 IDR/malam</p>
-              <a href="https://jhonvnbb.github.io/Aston-Serve/payment/" class="btn btn-primary">Pesan Sekarang</a>
+              <a href="../payment/" class="btn btn-primary">Pesan Sekarang</a>
             </div>
           </div>
         </div>
@@ -538,7 +577,7 @@
             style="width: 500px; max-height: 100%; margin-left: 50px"
           >
             <img
-              src="/img/b5.jpg"
+              src="../img/b5.jpg"
               class="card-img-top"
               alt="Room1"
               style="width: 100%; height: 281px; object-fit: cover"
@@ -569,7 +608,7 @@
               </ul>
               <h6 class="mt-3">Harga</h6>
               <p class="card-text">1.850.000 IDR/malam</p>
-              <a href="https://jhonvnbb.github.io/Aston-Serve/payment/" class="btn btn-primary">Pesan Sekarang</a>
+              <a href="../payment/" class="btn btn-primary">Pesan Sekarang</a>
             </div>
           </div>
         </div>
@@ -589,7 +628,7 @@
             id="juniorsuites"
           >
             <img
-              src="/img/b6.jpg"
+              src="../img/b6.jpg"
               class="card-img-top"
               alt="Room2"
               style="width: 100%; height: 100%"
@@ -620,7 +659,7 @@
               </ul>
               <h6 class="mt-3">Harga</h6>
               <p>2.050.000 IDR/malam</p>
-              <a href="https://jhonvnbb.github.io/Aston-Serve/payment/" class="btn btn-primary">Pesan Sekarang</a>
+              <a href="../payment/" class="btn btn-primary">Pesan Sekarang</a>
             </div>
           </div>
         </div>

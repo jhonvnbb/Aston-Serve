@@ -1,11 +1,26 @@
+<?php
+session_start();
+
+if(!isset($_SESSION["login"])){
+    echo "<script>
+            alert('Silahkan login terlebih dahulu');
+            window.location.href = '../';
+    </script>";
+    exit;
+}
+
+require '../myfun.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Payment AstonServe</title>
 
-    <link rel="Icon" href="img/astonservelogo.png" type="image/x-icon" />
+    <link rel="Icon" href="/img/astonservelogo.png" type="image/x-icon" />
+
+    <title>Payment AstonServe</title>
 
     <!-- CSS-5 -->
     <link
@@ -23,34 +38,30 @@
       }
       .container {
         max-width: 500px;
-        margin: 50px auto;
+        margin: 35px auto;
         padding: 20px;
         background-color: #081c2b;
         border: 1px solid #ededed;
         border-radius: 8px;
       }
-
       h1 {
         text-align: center;
         color: #ededed;
       }
-
       .input-group {
         position: relative;
         margin-bottom: 20px;
         display: flex;
         align-items: center;
       }
-
       .input-group i {
         position: absolute;
         left: 10px;
         color: #ccc;
       }
-
       .input-group input,
       .input-group select {
-        width: calc(100% - 30px); /* Mengurangi lebar input dengan lebar ikon */
+        width: calc(100% - 30px);
         padding: 10px;
         padding-left: 30px;
         border-radius: 5px;
@@ -59,13 +70,11 @@
         color: #333;
         margin-left: 20px;
       }
-
       .input-group input:focus,
       .input-group select:focus {
         border-color: #66afe9;
         outline: none;
       }
-
       .btn-primary {
         width: 100%;
         padding: 10px;
@@ -76,7 +85,6 @@
         cursor: pointer;
         transition: background-color 0.3s ease;
       }
-
       .btn-primary:hover {
         background-color: #0056b3;
       }
@@ -127,15 +135,19 @@
           />
         </div>
         <div class="input-group">
+          <i data-feather="calendar"></i>
+          <input type="date" id="date" name="date" required />
+        </div>
+        <div class="input-group">
           <i data-feather="box"></i>
           <select id="daftarroom" name="daftarroom" onchange="checkValue()">
-            <option selected>Show Room</option>
-            <option value="1">Suite Rooms - 2.000.000 IDR</option>
-            <option value="2">Deluxe Rooms - 1.750.0000 IDR</option>
-            <option value="3">Presidential Suites - 3.050.000 IDR</option>
-            <option value="4">Single Rooms - 1.000.000 IDR</option>
-            <option value="5">Twin Rooms - 1.850.000 IDR</option>
-            <option value="6">Junior Suites - 2.050.000 IDR</option>
+            <option value="0" selected disabled>Show Room</option>
+            <option value="2000000">Suite Rooms - 2.000.000 IDR</option>
+            <option value="1750000">Deluxe Rooms - 1.750.000 IDR</option>
+            <option value="3050000">Presidential Suites - 3.050.000 IDR</option>
+            <option value="1000000">Single Rooms - 1.000.000 IDR</option>
+            <option value="1850000">Twin Rooms - 1.850.000 IDR</option>
+            <option value="2050000">Junior Suites - 2.050.000 IDR</option>
           </select>
         </div>
         <p style="font-size: small">
@@ -158,7 +170,7 @@
         </button>
       </form>
     </div>
-    <p style="text-align: center; font-size: 12px">
+    <p style="text-align: center; font-size: 12px; margin-top: 20px">
       ⚠️⚠️ Silahkan lakukan pembayaran sesuai nominal kamarnya dan silahkan
       upload bukti pembayaran
     </p>
@@ -167,12 +179,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
     <script>
       feather.replace();
-
       // Javascript buat ngatur submit enable or disable
       function checkValue() {
         var selectValue = document.getElementById("daftarroom").value;
         var sendButton = document.getElementById("paymentbutton");
-
         if (selectValue != 0) {
           sendButton.removeAttribute("disabled");
         } else {
