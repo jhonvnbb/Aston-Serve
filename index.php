@@ -59,16 +59,19 @@ if(isset($_POST["login"])){
         background-image: url(./img/logbg.jpg);
         width: 1000px;
         border-radius: 10px;
+        box-shadow: 5px 5px 50px -10px #0091FF;
       }
       .konten1 img {
         height: 300px;
         width: 500px;
         border-radius: 10px;
+        box-shadow: 5px 5px 50px -10px #fff;
       }
       .konten2 {
         background-color: #fff;
         border-radius: 10px;
         margin: 0 0 0 50px;
+        box-shadow: 5px 5px 50px -10px #fff;
         /* height: 500px; */
       }
       .isikonten2 {

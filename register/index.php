@@ -6,6 +6,7 @@ if(isset($_POST["register"])){
     if(registrasi($_POST) > 0){
         echo "<script>
                 alert('Anda berhasil melakukan registrasi!');
+                window.location.href='../';
         </script>";
     } else{
         echo mysqli_error($conn);
