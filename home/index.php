@@ -133,6 +133,7 @@ require '../myfun.php';
                     class="dropdown-item"
                     style="color: red"
                     href="../logout.php"
+                    onclick="return confirm('Apakah anda yakin ingin keluar?');"
                     ><i data-feather="log-out"></i> Log out</a
                   >
                 </li>

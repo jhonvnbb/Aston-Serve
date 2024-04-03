@@ -52,4 +52,11 @@ function logout() {
     exit;
 }
 
+function paymentbutton($data){
+    global $conn;
+    $username = $_POST["Nama"];
+    $email = $_POST["Email"];
+    $nohp = $_POST["No_HP"];
+}
+
 ?>

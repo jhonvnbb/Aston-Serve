@@ -71,7 +71,6 @@ if(isset($_POST["login"])){
         background-color: #fff;
         border-radius: 10px;
         margin: 0 0 0 50px;
-        box-shadow: 5px 5px 50px -10px #fff;
         /* height: 500px; */
       }
       .isikonten2 {
@@ -80,8 +79,8 @@ if(isset($_POST["login"])){
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        box-shadow: 5px 5px 50px -10px #fff;
       }
-
       .isikonten2 img {
         height: 150px;
         margin: 10px auto;

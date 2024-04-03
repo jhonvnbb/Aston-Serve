@@ -10,6 +10,10 @@ if(!isset($_SESSION["login"])){
 }
 
 require '../myfun.php';
+
+if(isset($_POST["paymentbutton"])){
+  
+}
 ?>
 
 <!DOCTYPE html>
@@ -165,7 +169,7 @@ require '../myfun.php';
             required
           />
         </div>
-        <button type="submit" class="btn-primary" id="paymentbutton" disabled>
+        <button type="submit" class="btn-primary" id="paymentbutton" name="paymentbutton" disabled>
           <span>Confirm Payment</span>
         </button>
       </form>
